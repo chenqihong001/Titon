@@ -1,0 +1,6 @@
+[submodule "dep/protobuf"]
+	path = dep/protobuf
+	url = git@github.com:protocolbuffers/protobuf.git
+[submodule "dep/abseil-cpp"]
+	path = dep/abseil-cpp
+	url = git@github.com:abseil/abseil-cpp.git
