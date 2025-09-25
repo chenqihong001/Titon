@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/duration.proto";
+
+message SensorData {
+  string sensor_id = 1;
+  google.protobuf.Timestamp timestamp = 2;
+  
+  oneof data {
+    TemperatureData temp_data = 3;
+    HumidityData humidity_data = 4;
+    MotionData motion_data = 5;
+  }
+  
+  google.protobuf.Duration sampling_duration = 6;
+}
+
+message TemperatureData {
+  float celsius = 1;
+  float fahrenheit = 2;
+}
+
+message HumidityData {
+  float relative_humidity = 1;  // percentage
+}
+
+message MotionData {
+  float acceleration_x = 1;
+  float acceleration_y = 2;
+  float acceleration_z = 3;
+}

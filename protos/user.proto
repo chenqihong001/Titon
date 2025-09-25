@@ -1,0 +1,7 @@
+syntax = "proto3";
+package titon.entity;
+
+message User{
+	uint64 id = 1;
+	string username = 2;
+}
